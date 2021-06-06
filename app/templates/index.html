@@ -11,21 +11,9 @@
         <button class="button-filter" type="button">Programación</button>
         <button class="button-filter" type="button">Modalidad</button>
         <button class="button-filter" type="button">Salario</button>
-        <button class="button-filter" type="button">Más filtros</button>
-    </div>
-
-    <div class="jobs-results">
-        <div class="job">
-            <div class="results-resume">
-                <div class="avatar">
-                    <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
-                </div>
-                <div class="information">
-                    <strong>Full-Stack Developer for USA Project</strong>
-                    <p class="business"> Facebook  (Remote)</p>
-                </div>
-            </div>
-        </div>
+        {% for i in all_functions %}
+        <input type="checkbox" name="check" value="{{i}}">{{i}}</input>
+        {% endfor %}
     </div>
 
 
@@ -40,6 +28,8 @@
                     <div class="information">
                         <strong class="title-job">{{title[i]}}</strong>
                         <p class="business">{{company[i]}}</p>
+                        <p class="business">{{functions[i]}}</p>
+
                     </div>
                 </div>
             </div>

@@ -18,15 +18,6 @@ from flask_login import LoginManager
 
 import os
 
-"""class ExampleForm(FlaskForm):
-	#title = TextField(u'Title', validators = [Required()])
-	title = TextAreaField(u'Title', validators = [Required()])
-	content = TextAreaField(u'Content')
-	date = DateTimeField(u'Date', format='%d/%m/%Y %H:%M')
-	#recaptcha = RecaptchaField(u'Recaptcha')
-"""
-
-
 app = Flask(__name__)
 
 #SECRET_KEY = os.urandom(32)
@@ -38,11 +29,18 @@ def index():
 	company = list(data['Company'])
 	title = list(data['Title'])
 	description = list(data['Description'])
-	functions = list(data['Function'])
 	link = list(data['Link'])
+	data["Function"]= data["Function"].str.split(", ")
+	functions = list(data['Function'])
+	final = []
+	for x in functions:
+		if type(x) == list:
+			for i in x:
+				i.replace(" ", "")
+				final.append(i)
+	all_functions = list(set(final))   
 	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link)
-	#return render_template('index.html')
+	functions=functions, link=link, all_functions=all_functions)
 
 @app.route('/index/')
 def index2():
@@ -50,24 +48,19 @@ def index2():
 	company = list(data['Company'])
 	title = list(data['Title'])
 	description = list(data['Description'])
-	functions = list(data['Function'])
 	link = list(data['Link'])
+	data["Function"]= data["Function"].str.split(",")
+	functions = list(data['Function'])
+	final = []
+	for x in functions:
+		if type(x) == list:
+			for i in x:
+				i.replace(" ", "")
+				final.append(i)
+	all_functions = list(set(final))   
 	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link)
+	functions=functions, link=link, all_functions=all_functions)
 	#return render_template('index.html')
-
-
-
-@app.route("/tables")
-def show_tables():
-	data = pd.read_excel('LinkedIn_intern_jobs_2_chile.xlsx')
-	company = list(data['Company'])
-	title = list(data['Title'])
-	description = list(data['Description'])
-	functions = list(data['Function'])
-	link = list(data['Link'])
-	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link)
 
 # ====================
 

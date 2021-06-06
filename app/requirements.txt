@@ -1,7 +1,6 @@
 Flask==1.1.2
 
 
-
 flask-admin ==1.5.3
 flask-bootstrap ==3.3.7.1
 pandas
