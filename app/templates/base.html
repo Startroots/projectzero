@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+
+
+{%block title%}Base{%endblock%}
+
+{% block navbar %}
+<nav class="navbar">
+	<div class="layout">
+        <h1>Trabajos</h1>
+        <div class="filters">
+            <button class="button-filter" type="button">Programación</button>
+            <button class="button-filter" type="button">Modalidad</button>
+            <button class="button-filter" type="button">Salario</button>
+            <button class="button-filter" type="button">Más filtros</button>
+        </div>
+</nav>
+
+{% endblock %}
+
+{%block content %}
+
+<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	    <div class="row">
+	    	<div class="col-md-4">
+			    <ul>
+			    {% for message in messages %}
+			        <li>{{ message }} </li>
+			    {% endfor %}
+			    </ul>
+			</div>
+		</div>
+	    {% endif %}
+    {% endwith %}
+
+	{%block main_content%}{%endblock%}
+
+</div>
+
+{%endblock%}
+
+{% block scripts %}
+
+{{super()}}
+{% endblock %}

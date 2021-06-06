@@ -1,0 +1,30 @@
+Flask==1.1.2
+
+
+
+flask-admin ==1.5.3
+flask-bootstrap ==3.3.7.1
+pandas
+xlrd
+openpyxl
+
+# Flask Packages
+Flask-Bootstrap==3.3.7.1
+Flask-Login==0.4.0
+Flask-Migrate==2.0.2
+Flask-Script==2.0.5
+Flask-SQLAlchemy==2.4.0
+Flask-WTF==0.14.2
+Flask-User==1.0.1.5
+werkzeug==0.16.1
+wtforms-html5
+wtforms-validators
+email-validator
+
+# Automated tests
+pytest==3.0.5
+pytest-cov==2.4.0
+
+#flow
+pyflowcl
+

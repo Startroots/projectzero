@@ -1,0 +1,59 @@
+body{
+    color: #2b353b;
+    font-family:"Lato",sans-serif,sans-serif;
+}
+.layout{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 48px;
+}
+
+.filters{
+    height: 60px;
+}
+
+.button-filter{
+    height: 36.4px;
+    background-color: #fff;
+    float: left;
+    margin-right: 9px;
+    padding: 0px 16px 0px 16px;
+    color: #0093d3;
+    border-radius: 6px;
+    border: 1px solid #0093d3;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.button-filter:hover{
+    background-color: #f2f6f7;
+    transition: 0.15s;
+}
+
+.jobs-results{
+    height: 111px;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+    cursor: pointer;
+}
+
+.jobs-results:hover{
+    background-color: #f2f6f7;
+}
+
+.job{
+    padding: 23px 4px 23px 4px;
+}
+
+.avatar{
+    float: left;
+}
+
+.information{
+    float: left;
+    margin-left: 8px;
+}
+.business{
+    font-size: 14px;
+    color: gray;
+}
