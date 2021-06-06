@@ -11,7 +11,6 @@ import requests
 import json
 
 from flask import Flask
-from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_login import LoginManager
@@ -29,7 +28,6 @@ import os
 
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app) 
 
 #SECRET_KEY = os.urandom(32)
 #app.config['SECRET_KEY'] = SECRET_KEY
@@ -58,13 +56,7 @@ def index2():
 	functions=functions, link=link)
 	#return render_template('index.html')
 
-@app.route('/pago/', methods=['GET', 'POST'])
-def pago():
-	return render_template('pago.html')
 
-@app.route('/error/', methods=['GET', 'POST'])
-def error():
-	return render_template('error.html')
 
 @app.route("/tables")
 def show_tables():
@@ -78,18 +70,7 @@ def show_tables():
 	functions=functions, link=link)
 
 # ====================
-@app.errorhandler(500)
-def server_error(e):
-    logging.exception("An error occurred during a request.")
-    return (
-        """
-    An internal error occurred: <pre>{}</pre>
-    See logs for full stacktrace.
-    """.format(
-            e
-        ),
-        500,
-    )
+
 
 
 if __name__ == "__main__":

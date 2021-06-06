@@ -1,56 +1,49 @@
 {% extends "base.html" %}
 
-{% block styles %}
-{{super()}}
-<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='css/style.css')}}">
+{% block head %}
+{{ super() }}
 {% endblock %}
 
-{%block title%}Trabajo para estudiantes{%endblock%}
+{% block title %}Trabajo para estudiantes {% endblock %}
 
-{%block main_content%}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajos para estudiantes</title>
-</head>
-<body>
-    <div class="layout">
-        <div class="jobs-results">
-            <div class="job">
-                <div class="results-resume">
-                    <div class="avatar">
-                        <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
-                    </div>
-                    <div class="information">
-                        <strong>Full-Stack Developer for USA Project</strong>
-                        <p class="business"> Facebook  (Remote)</p>
-                    </div>
+{% block content %}
+    <div class="filters">
+        <button class="button-filter" type="button">Programación</button>
+        <button class="button-filter" type="button">Modalidad</button>
+        <button class="button-filter" type="button">Salario</button>
+        <button class="button-filter" type="button">Más filtros</button>
+    </div>
+
+    <div class="jobs-results">
+        <div class="job">
+            <div class="results-resume">
+                <div class="avatar">
+                    <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
+                </div>
+                <div class="information">
+                    <strong>Full-Stack Developer for USA Project</strong>
+                    <p class="business"> Facebook  (Remote)</p>
                 </div>
             </div>
         </div>
+    </div>
 
 
-		{% for i in range(company|length) %}    
-		<div class="jobs-results">
+    {% for i in range(company|length) %}    
+    <div class="jobs-results">
+        <a href="{{link[i]}}" target="_blank">
             <div class="job">
                 <div class="results-resume">
                     <div class="avatar">
                         <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
                     </div>
                     <div class="information">
-                        <strong>{{title[i]}}</strong>
+                        <strong class="title-job">{{title[i]}}</strong>
                         <p class="business">{{company[i]}}</p>
                     </div>
                 </div>
             </div>
-        </div>
-		{% endfor %}
-	</div>
-</body>
-{%endblock%}
-
-{% block scripts %}
-
-{{super()}}
+        </a>
+    </div>
+    {% endfor %}
 {% endblock %}

@@ -2,6 +2,17 @@ body{
     color: #2b353b;
     font-family:"Lato",sans-serif,sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .layout{
     margin-left: 10%;
     margin-right: 10%;
@@ -41,6 +52,7 @@ body{
     background-color: #f2f6f7;
 }
 
+
 .job{
     padding: 23px 4px 23px 4px;
 }
@@ -53,6 +65,7 @@ body{
     float: left;
     margin-left: 8px;
 }
+
 .business{
     font-size: 14px;
     color: gray;
