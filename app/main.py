@@ -3,7 +3,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from flask_wtf import FlaskForm
 from wtforms  import TextField, TextAreaField, DateTimeField, PasswordField
 from wtforms.validators import Required
-from forms import ExampleForm
+
 from datetime import datetime
 import pandas as pd
 
