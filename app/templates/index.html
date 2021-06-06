@@ -11,13 +11,18 @@
         <button class="button-filter" type="button">Programación</button>
         <button class="button-filter" type="button">Modalidad</button>
         <button class="button-filter" type="button">Salario</button>
-        {% for i in all_functions %}
-        <input type="checkbox" name="check" value="{{i}}">{{i}}</input>
-        {% endfor %}
+
+            <form method="post">
+                {{ form.hidden_tag() }}
+                {{ form.example }}
+                <button type="submit">Submit</button>
+            </form>
+
     </div>
 
 
-    {% for i in range(company|length) %}    
+    {% for i in range(company|length) %}
+
     <div class="jobs-results">
         <a href="{{link[i]}}" target="_blank">
             <div class="job">
