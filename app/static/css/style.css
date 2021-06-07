@@ -3,38 +3,34 @@ body{
     font-family:"Lato",sans-serif,sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-}
-
-nav {
-    height: 10vh;
-    background: white;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    width: 50%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nav-links li a {
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-}
-
 .layout{
-    margin-top: 0px;
+    margin-top: 66px;
+}
+
+.pz-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    z-index: 900;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
+
+.pz-header-container {
+    display: flex;
+    height: 66px;
+    padding: 0 29px;
+    justify-content: space-between;
+}
+
+.pz-header-brand {
+    position: relative;
+    min-width: 165px;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
 }
 
 .box-filters{
@@ -101,6 +97,11 @@ nav {
     cursor: pointer;
 }
 
+.link-job{
+    text-decoration: none;
+    color: inherit;
+}
+
 .jobs-results:hover{
     background-color: #f2f6f7;
 }
@@ -152,77 +153,21 @@ nav {
 
 .business{
     font-size: 14px;
+    color: #737e83;
 }
 
 
 @media screen and (max-width: 991px) {
     .layout{
-        margin-top: 0px;
+        margin-top: 66px;
     }
-    .line {
-      width: 30px;
-      height: 3px;
-      background: black;
-      margin: 5px;
-    }
-    nav {
-      position: relative;
-      z-index: 1;
-    }
-  
-    .hamburger {
-      position: absolute;
-      cursor: pointer;
-      right: 5%;
-      top: 50%;
-      transform: translate(-5%, -50%);
-      z-index: 1;
-    }
-  
-    .nav-links {
-      position: fixed;
-      background: white;
-      height: 100vh;
-      width: 100%;
-      flex-direction: column;
-      clip-path: circle(10px at 100% -10%);
-      -webkit-clip-path: circle(10px at 100% -10%);
-      transition: all 1s ease-out;
-      pointer-events: none;
-    }
-    .nav-links.open {
-      clip-path: circle(1500px at 100% -10%);
-      -webkit-clip-path: circle(1500px at 100% -10%);
-      pointer-events: all;
-    }
-    .landing {
-      flex-direction: column;
-    }
-    .nav-links li {
-      opacity: 0;
-    }
-    .nav-links li a {
-      font-size: 25px;
-    }
-    .nav-links li:nth-child(1) {
-      transition: all 0.5s ease 0.2s;
-    }
-    .nav-links li:nth-child(2) {
-      transition: all 0.5s ease 0.4s;
-    }
-    .nav-links li:nth-child(3) {
-      transition: all 0.5s ease 0.6s;
-    }
-    li.fade {
-      opacity: 1;
-    }
-
     .box-filters{
         height: 100%;
         float: left;
         width: 100%;
         position: relative;
         background-color: white;
+        padding-top: 12px;
         padding-bottom: 12px;
         z-index: -1;
     }

@@ -10,20 +10,14 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block navbar %}
-		<nav>
-			<div class="hamburger">
-			  <div class="line"></div>
-			  <div class="line"></div>
-			  <div class="line"></div>
-			</div>
-			<ul class="nav-links">
-			  <li><a href="#">About</a></li>
-			  <li><a href="#">Contact</a></li>
-			  <li><a href="#">Projects</a></li>
-			</ul>
-		  </nav>
-		</nav>
+		{% block header %}
+			<header class="pz-header">
+				<div class="pz-header-container">
+					<div class="pz-header-brand">
+						Projectzero
+					</div>
+				</div>
+			</header>
 		{% endblock %}
 		{% block content %}{% endblock %}
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
