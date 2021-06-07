@@ -9,11 +9,24 @@
 	<body>
 		{% block navbar %}
 		<nav>
+			<div class="navbar">
+				<div class="landing-navbar">
+					<div class="logo">
+						<a href="index.html">
+							<img class="image-logo" src="{{url_for('static', filename='img/p.png')}}" height="32px">
+						</a>
+					</div>
+					<p class="name-logo">rojectzero</p>
+					<div class="links">
+						<a href="#">Nombre</a>
+						<a href="#">Personas</a>
+						<a href="#">Aprende</a>
+					</div>
+				</div>
+			</div>
 		</nav>
 		{% endblock %}
-		<div class="layout">
-			{% block content %}{% endblock %}
-		</div>
+		{% block content %}{% endblock %}
 	</body>
 </html>
 

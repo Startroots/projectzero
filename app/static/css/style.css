@@ -13,14 +13,80 @@ a:hover {
     color: black;
 }
 
-.layout{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 48px;
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    background-color: white;    
+    z-index: +1;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 4%), 0 1px 1px 0 rgb(0 0 0 / 4%), 0 2px 1px -1px rgb(0 0 0 / 4%);
 }
 
-.filters{
-    height: 60px;
+.landing-navbar{
+    margin: 0px 10% 0px 10%;
+    padding: 8px 0px 8px 0px;
+    height: 44px;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    margin-right: 4px;
+}
+
+.logo:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #f3f6fa;
+    border-radius: 22px;
+}
+
+.logo .image-logo{
+    margin-top: 5px;
+}
+
+.name-logo {
+    float: left;
+    text-decoration: none;
+    color: #333232;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    padding: 6px 10px 6px 2px;
+
+}
+
+.links a{
+    margin-top: 3px;
+    padding: 10px 16px 10px 16px;
+    text-decoration: none;
+    color: #757575;
+    float: right;
+}
+
+.links a:hover{
+    text-decoration: none;
+    background-color: #f3f6fa;
+    color: black;
+    border-radius: 22px;
+}
+
+.layout{
+    margin-top: 64px;
+}
+
+.box-filters{
+    height: 100%;
+    float: left;
+    width: 20%;
+    position: fixed;
+    background-color: #f2f6f7;;
+    padding-bottom: 12px;
+
+}
+.button-box{
+    margin: auto;
+    display: flex;
 }
 
 .button-filter{
@@ -29,17 +95,41 @@ a:hover {
     float: left;
     margin-right: 9px;
     padding: 0px 16px 0px 16px;
-    color: #0093d3;
+    color: #b673ec;
     border-radius: 6px;
-    border: 1px solid #0093d3;
+    border: 1px solid #b673ec;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
+    margin: auto;
+}
+
+.filters-list ul li{
+    list-style: none;
+    font-size: 14px;
+}
+.filters-list ul{
+    padding-left: 5px;
+}
+
+.filter-title{
+    text-align: center;
+    color: #b673ec;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #b673ec;
+
 }
 
 .button-filter:hover{
-    background-color: #f2f6f7;
+    background-color: #b673ec;
+    color: #fff;
     transition: 0.15s;
+}
+
+.jobs-box{
+    float: right;
+    width: 79%;
 }
 
 .jobs-results{
@@ -69,4 +159,8 @@ a:hover {
 .business{
     font-size: 14px;
     color: gray;
+}
+
+.title-h1{
+    letter-spacing: -0.04em;
 }
