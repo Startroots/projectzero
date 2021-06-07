@@ -94,9 +94,11 @@ nav {
     width: 79%;
 }
 
+.title-h1{
+    letter-spacing: -0.04em;
+}
+
 .jobs-results{
-    height: 111px;
-    border-bottom: 1px solid rgba(135,153,160,0.25);
     cursor: pointer;
 }
 
@@ -104,28 +106,56 @@ nav {
     background-color: #f2f6f7;
 }
 
+.jobs-results-information{
+    padding: 23px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
 
-.job{
-    padding: 23px 4px 23px 4px;
+.jobs-results-information-main{
+    display: flex;
+    flex-grow: 2;
 }
 
 .avatar{
-    float: left;
+    position: relative;
+    z-index: -1;
+    width: 64px;
+    height: 64px;
+    margin-right: 14px;
+    flex-shrink: 0;
 }
 
-.information{
-    float: left;
-    margin-left: 8px;
+.results-list-info{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
 }
+
+.results-list-title{
+    margin: 5px 0 0;
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.color-title1{
+    color: #2b353b;
+}
+
+.color-title2{
+    color: #a7b7be;
+}
+
 
 .business{
     font-size: 14px;
-    color: gray;
 }
 
-.title-h1{
-    letter-spacing: -0.04em;
-}
 
 @media screen and (max-width: 991px) {
     .layout{

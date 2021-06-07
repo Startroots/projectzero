@@ -24,21 +24,22 @@
             {% for i in range(company|length) %}
     
             <div class="jobs-results">
-                <a href="{{link[i]}}" target="_blank">
-                    <div class="job">
-                        <div class="results-resume">
-                            <div class="avatar">
-                                <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
-                            </div>
-                            <div class="information">
-                                <strong class="title-job">{{title[i]}}</strong>
-                                <p class="business">{{company[i]}}</p>
-                                <p class="business">{{functions[i]}}</p>
-        
+                <div class="jobs-results-information">
+                    <div class="jobs-results-information-main">
+                        <div class="avatar">
+                            <img src="{{url_for('static', filename='img/facebook.png')}}" alt="Facebook" height="64px">
+                        </div>
+                        <div class="results-list-info">
+                            <h4 class="results-list-title">
+                                <strong class="color-title1">{{title[i]}}</strong>
+                                <span class="color-title2"> Full time</span>
+                            </h4>
+                            <div class="business">
+                                {{company[i]}}
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             {% endfor %}
         </div>
