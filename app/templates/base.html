@@ -2,6 +2,9 @@
 <html lang="en">
 	<head>
 		{% block head %}
+		<meta charset="UTF-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 		<title>{% block title %}{% endblock %} - Projectzero</title>
 		{% endblock %}
@@ -9,24 +12,21 @@
 	<body>
 		{% block navbar %}
 		<nav>
-			<div class="navbar">
-				<div class="landing-navbar">
-					<div class="logo">
-						<a href="index.html">
-							<img class="image-logo" src="{{url_for('static', filename='img/p.png')}}" height="32px">
-						</a>
-					</div>
-					<p class="name-logo">rojectzero</p>
-					<div class="links">
-						<a href="#">Nombre</a>
-						<a href="#">Personas</a>
-						<a href="#">Aprende</a>
-					</div>
-				</div>
+			<div class="hamburger">
+			  <div class="line"></div>
+			  <div class="line"></div>
+			  <div class="line"></div>
 			</div>
+			<ul class="nav-links">
+			  <li><a href="#">About</a></li>
+			  <li><a href="#">Contact</a></li>
+			  <li><a href="#">Projects</a></li>
+			</ul>
+		  </nav>
 		</nav>
 		{% endblock %}
 		{% block content %}{% endblock %}
+		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 	</body>
 </html>
 
