@@ -25,7 +25,6 @@ nav {
     height: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-left: auto;
 }
 
 .nav-links li a {
@@ -35,7 +34,7 @@ nav {
 }
 
 .layout{
-    margin-top: 64px;
+    margin-top: 0px;
 }
 
 .box-filters{
@@ -121,7 +120,6 @@ nav {
 
 .avatar{
     position: relative;
-    z-index: -1;
     width: 64px;
     height: 64px;
     margin-right: 14px;
@@ -169,6 +167,7 @@ nav {
     }
     nav {
       position: relative;
+      z-index: 1;
     }
   
     .hamburger {
