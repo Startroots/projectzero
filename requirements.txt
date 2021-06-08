@@ -27,3 +27,4 @@ pytest-cov==2.4.0
 #flow
 pyflowcl
 
+gunicorn==20.0.4
