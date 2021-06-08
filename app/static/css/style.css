@@ -37,7 +37,7 @@ body{
     height: 100%;
     float: left;
     width: 20%;
-    position: fixed;
+    position: absolute;
     background-color: #f2f6f7;;
     padding-bottom: 12px;
 
@@ -53,9 +53,9 @@ body{
     float: left;
     margin-right: 9px;
     padding: 0px 16px 0px 16px;
-    color: #b673ec;
+    color: black;
     border-radius: 6px;
-    border: 1px solid #b673ec;
+    border: 1px solid black;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
@@ -72,14 +72,16 @@ body{
 
 .filter-title{
     text-align: center;
-    color: #b673ec;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: black;
     background-color: #fff;
     border-radius: 6px;
-    border: 1px solid #b673ec;
+    border: 1px solid black;
 }
 
 .button-filter:hover{
-    background-color: #b673ec;
+    background-color: black;
     color: #fff;
     transition: 0.15s;
 }
@@ -174,10 +176,10 @@ body{
 
     .filter-title-button{
         text-align: center;
-        color: #b673ec;
+        color: black;
         background-color: #fff;
         border-radius: 6px;
-        border: 1px solid #b673ec;
+        border: 1px solid black;
         padding-bottom: 8px;
         padding-top: 8px;
         margin: 0px 5% 0px 5%;
