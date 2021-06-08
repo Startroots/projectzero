@@ -1,0 +1,216 @@
+body{
+    color: #2b353b;
+    font-family:"Lato",sans-serif,sans-serif;
+}
+
+.layout{
+    margin-top: 66px;
+}
+
+.pz-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    z-index: 900;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
+
+.pz-header-container {
+    display: flex;
+    height: 66px;
+    padding: 0 29px;
+    justify-content: space-between;
+}
+
+.pz-header-brand {
+    position: relative;
+    min-width: 165px;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.box-filters{
+    height: 100%;
+    float: left;
+    width: 20%;
+    position: absolute;
+    background-color: #f2f6f7;;
+    padding-bottom: 12px;
+
+}
+.button-box{
+    margin: auto;
+    display: flex;
+}
+
+.button-filter{
+    height: 36.4px;
+    background-color: #fff;
+    float: left;
+    margin-right: 9px;
+    padding: 0px 16px 0px 16px;
+    color: black;
+    border-radius: 6px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.filters-list ul li{
+    list-style: none;
+    font-size: 14px;
+}
+.filters-list ul{
+    padding-left: 5px;
+}
+
+.filter-title{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: black;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.button-filter:hover{
+    background-color: black;
+    color: #fff;
+    transition: 0.15s;
+}
+
+.jobs-box{
+    float: right;
+    width: 79%;
+}
+
+.title-h1{
+    letter-spacing: -0.04em;
+}
+
+.jobs-results{
+    cursor: pointer;
+}
+
+.link-job{
+    text-decoration: none;
+    color: inherit;
+}
+
+.jobs-results:hover{
+    background-color: #f2f6f7;
+}
+
+.jobs-results-information{
+    padding: 23px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
+
+.jobs-results-information-main{
+    display: flex;
+    flex-grow: 2;
+}
+
+.avatar{
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.results-list-info{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+
+.results-list-title{
+    margin: 5px 0 0;
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.color-title1{
+    color: #2b353b;
+}
+
+.color-title2{
+    color: #a7b7be;
+}
+
+
+.business{
+    font-size: 14px;
+    color: #737e83;
+}
+
+
+@media screen and (max-width: 991px) {
+    .layout{
+        margin-top: 66px;
+    }
+    .box-filters{
+        height: 100%;
+        float: left;
+        width: 100%;
+        position: relative;
+        background-color: white;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        z-index: -1;
+    }
+
+    .filter-title-button{
+        text-align: center;
+        color: black;
+        background-color: #fff;
+        border-radius: 6px;
+        border: 1px solid black;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        margin: 0px 5% 0px 5%;
+        cursor: pointer;
+    }
+
+    #example {
+        visibility: hidden;
+        height: 0px;
+        transition: height 2s;
+      }
+
+    #example.abrir {
+        visibility: visible;
+        pointer-events: all;
+        height: auto;
+    }
+
+    .button-filter{
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .button-filter.abrir{
+        height: 36.4px;
+        visibility: visible;
+    }
+
+    .jobs-box{
+        float: left;
+        width: 100%;
+    }
+}
+  
