@@ -40,11 +40,12 @@ def data():
 	all_functions = list(set(final)) 
 	return all_functions
 
-def filter(company, title, description,link,functions, selection):
+def filter(company, title, description,link,link_picture,functions, selection):
 	c = []
 	t = []
 	d = []
 	l = []
+	lp = []
 	f = []
 	for i in range(len(company)):
 		if type(functions[i]) == list:
@@ -53,8 +54,16 @@ def filter(company, title, description,link,functions, selection):
 				t.append(title[i])
 				d.append(description[i])
 				l.append(link[i])
+				lp.append(link_picture[i])
 				f.append(functions[i])
-	return c,t,d,l,f
+			elif len(selection)==0:
+				c.extend(company)
+				t.extend(title)
+				d.extend(description)
+				l.extend(link)
+				lp.extend(link_picture)
+				f.extend(functions)
+	return c,t,d,l,lp,f
 
 class MultiCheckboxField(SelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
@@ -77,6 +86,7 @@ def index():
 	title = list(data['Title'])
 	description = list(data['Description'])
 	link = list(data['Link'])
+	link_picture = list(data['Link_picture'])
 	data["Function"]= data["Function"].str.split(", ")
 	functions = list(data['Function'])
 	final = []
@@ -91,14 +101,14 @@ def index():
 	if form.validate_on_submit():
 		selections = form.example.data
 		print(form.example.data)
-		company, title, description,link,functions = filter(company, title, description,link,functions, selections)
+		company, title, description,link,link_picture,functions = filter(company, title, description,link,link_picture,functions, selections)
 		return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link, all_functions=all_functions, form=form)
+	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
 	else:
 		print("error")
 
 	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link, all_functions=all_functions, form=form)
+	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
 
 
 
@@ -110,6 +120,7 @@ def index2():
 	title = list(data['Title'])
 	description = list(data['Description'])
 	link = list(data['Link'])
+	link_picture = list(data['Link_picture'])
 	data["Function"]= data["Function"].str.split(",")
 	functions = list(data['Function'])
 	final = []
@@ -120,7 +131,7 @@ def index2():
 				final.append(i)
 	all_functions = list(set(final))   
 	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link, all_functions=all_functions)
+	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions)
 	#return render_template('index.html')
 
 # ====================
