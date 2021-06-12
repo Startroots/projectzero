@@ -132,6 +132,7 @@ def index2():
 	all_functions = list(set(final))   
 	return render_template('index.html', company=company, title=title, description=description, 
 	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions)
+	
 	#return render_template('index.html')
 
 # ====================
