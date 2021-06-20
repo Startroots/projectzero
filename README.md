@@ -20,3 +20,4 @@
 * Login
 * Favorites list (hearts and shit)
 * Teams hackatons and the winning team won a position on the company
+* Donations button
