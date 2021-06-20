@@ -77,8 +77,8 @@ class SimpleForm(FlaskForm):
     files = [(x, x) for x in list_of_files]
     example = MultiCheckboxField('Label', choices=files)
 
-@app.route('/', methods=['post','get'])
-def index():
+@app.route('/jobs', methods=['post','get'])
+def jobs():
 	form = SimpleForm()
 
 	data = pd.read_excel('LinkedIn_intern_jobs_2_chile.xlsx')
@@ -102,41 +102,19 @@ def index():
 		selections = form.example.data
 		print(form.example.data)
 		company, title, description,link,link_picture,functions = filter(company, title, description,link,link_picture,functions, selections)
-		return render_template('index.html', company=company, title=title, description=description, 
+		return render_template('jobs.html', company=company, title=title, description=description, 
 	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
 	else:
 		print("error")
 
-	return render_template('index.html', company=company, title=title, description=description, 
+	return render_template('jobs.html', company=company, title=title, description=description, 
 	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
 
 
-
-#####esto no esta haciendo nada 
-@app.route('/index/')
-def index2():
-	data = pd.read_excel('LinkedIn_intern_jobs_2_chile.xlsx')
-	company = list(data['Company'])
-	title = list(data['Title'])
-	description = list(data['Description'])
-	link = list(data['Link'])
-	link_picture = list(data['Link_picture'])
-	data["Function"]= data["Function"].str.split(",")
-	functions = list(data['Function'])
-	final = []
-	for x in functions:
-		if type(x) == list:
-			for i in x:
-				i.replace(" ", "")
-				final.append(i)
-	all_functions = list(set(final))   
-	return render_template('index.html', company=company, title=title, description=description, 
-	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions)
-	#return render_template('index.html')
-
-# ====================
-
-
+@app.route('/')
+def index():
+	return render_template('index.html')
+	
 
 if __name__ == "__main__":
     # This is used when running locally. Gunicorn is used to run the
