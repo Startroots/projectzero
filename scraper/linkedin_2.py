@@ -5,7 +5,7 @@ Created on Sun Jun 20 18:46:34 2021
 @author: Javiera
 """
 
-from bs4 import BeautifulSoup
+import re
 import requests
 import time
 import pandas as pd
@@ -69,17 +69,25 @@ for job in jobs:
     func = ""
     sect = ""
     for item in funciones:
-        if "Tipo" in item.get_attribute("innerText"):
-            type_ = item.get_attribute("innerText").split("\n")[1].replace(" ","")
-        if "unción laboral" in item.get_attribute("innerText"):
-            func = item.get_attribute("innerText").replace(" ","").split("\n")[1:]
-        if "ectores" in item.get_attribute("innerText"):
-            sect = item.get_attribute("innerText").split("\n")[1].replace(" ","")         
+        if "Tipo" in item.find_element_by_css_selector('h3').get_attribute('innerText'):
+            type_ = item.find_element_by_css_selector('span').get_attribute('innerText')
+            type_ = re.split(',|, |y ',type_)
+        if "unción laboral" in item.find_element_by_css_selector('h3').get_attribute('innerText'):
+            func = item.find_element_by_css_selector('span').get_attribute('innerText')
+            func = re.split(',|, |y ',func)
+            #func = item.get_attribute("innerText").replace(" ","").split("\n")[1:]
+        if "ectores" in item.find_element_by_css_selector('h3').get_attribute('innerText'):
+            sect = item.find_element_by_css_selector('span').get_attribute('innerText')
+            sect = re.split(',|, |y ',sect)
+            #sect = item.get_attribute("innerText").split("\n")[1].replace(" ","")         
             
-    print("DESC: ", desc, "FUNCIONES: ", list_funciones)
+    print(type_, func, sect)
     dic = {'Title': name, 'Company': company, 'Date': time_, 'Link': link, 'Photo': photo, 'Description': desc, 'Function': func, 'Type': type_, 'Sector': sect, 'portal':'linkedin'}
     data.append(dic)
-    cont = cont + 1    
+    cont = cont + 1  
+    
+    #if cont==1:
+     #   break
 
 
 output = pd.DataFrame()

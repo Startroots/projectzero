@@ -17,6 +17,23 @@ print("Numero de anuncios: ", no_of_jobs)
 
 #encontrar todos los trabajos
 job_lists = driver.find_element_by_id('listado-avisos')
-jobs = job_lists.find_elements_by_tag_name('li') # return a list
+#jobs = job_lists.find_elements_by_tag_name('li') # return a list
 
+"""
+/html/body/div[1]/div/div[2]/div[2]/div/div/div[1]/div[2]
+/html/body/div[1]/div/div[2]/div[2]/div/div/div[1]/div[3]
+/html/body/div[1]/div/div[2]/div[2]/div/div/div[1]/div[4]
+/html/body/div[1]/div/div[2]/div[2]/div/div/div[1]/div[5]
+"""
+
+for job in job_lists:
+    test = job
+    name = test.find_element_by_css_selector('h2').get_attribute('innerText')
+    
+    print(name)
+
+
+
+#ficha aviso derecha
+job_lists = driver.find_element_by_id('listado-avisos')
 
