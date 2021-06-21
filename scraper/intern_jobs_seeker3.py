@@ -10,6 +10,9 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -32,7 +35,7 @@ while i <= int(no_of_jobs/25)+1:
     except:
         pass
         time.sleep(5)
-
+    time.sleep(5)
 
 #encontrar todos los trabajos
 job_lists = driver.find_element_by_class_name('jobs-search__results-list')
@@ -57,7 +60,10 @@ for job in jobs:
         pass
     
     # clicking job to view job details
-    job_click_path = f'/html/body/main/div/section[2]/ul/li[{cont+1}]/img'
+    #job_click_path = f'/html/body/div[1]/div/main/section[2]/ul/li[{cont+1}]/div/div[1]/img'
+    job_click_path =f'//html/body/div[1]/div/main/section[2]/ul/li[{cont+1}]/div/a'
+    #job_click_path = f'/html/body/main/div/section[2]/ul/li[{cont+1}]/img'
+    WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, job_click_path)))
     job_click = driver.find_element_by_xpath(job_click_path).click()
     time.sleep(5)
 
@@ -88,12 +94,15 @@ for job in jobs:
      
     job_func_path = '/html/body/main/section/div[2]/section[2]/ul/li[3]/span'
     #job_func_path = '//*[@id="main-content"]/section/div[2]/section[2]/ul/li[3]'
-    job_func_elements = job.find_elements_by_xpath(job_func_path)
     jf = []
-    for element in job_func_elements:
-        word = element.get_attribute('innerText')
-        print(word)
-        jf.append(word)   
+    try:
+        job_func_elements = job.find_elements_by_xpath(job_func_path)
+        for element in job_func_elements:
+            word = element.get_attribute('innerText')
+            print(word)
+            jf.append(word)
+    except:
+        jf.append("")
     job_func_final = ', '.join(jf)
     job_func.append(job_func_final) 
     
@@ -117,4 +126,4 @@ job_data = pd.DataFrame({'ID': job_id,
 # cleaning description column
 #job_data['Description'] = job_data['Description'].str.replace('\n',' ')
 
-job_data.to_excel('LinkedIn_intern_jobs_2_chile.xlsx', index = False)
+#job_data.to_excel('LinkedIn_intern_jobs_2_chile.xlsx', index = False)
