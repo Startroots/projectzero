@@ -4,7 +4,7 @@
 | Javiera Bustos | [@javduzen](https://github.com/javduzen) |   
 | José Izam      | [@joigmz](https://github.com/joigmz)   |   
 ## To-do list
-1. Finish index  (Gusy)
+1. Finish index  (Gusy) ✅
 2. Optimize Scrapers (add laborum and other sources, unify)  (Javi)
 3. BigQuery integration  (both)
 4. Form for companies to send us their job opportunities  (both)
