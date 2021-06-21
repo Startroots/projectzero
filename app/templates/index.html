@@ -19,12 +19,28 @@
             {% endfor %}
         </div>
     </div>
-    <div class="box-professions">
-        <div class="button-box">
-            <a href="{{ url_for('jobs') }}" class="link-job">
-                <button class="button-filter">Ver empleos</button>
-            </a>
+</div>
+<div class="actions">
+    <div class="students">
+        <div class="box-student-button">
+            <div class="button-box">
+                <a href="{{ url_for('jobs') }}" class="link-job">
+                    <button class="button-filter">Ver empleos</button>
+                </a>
+            </div>
         </div>
     </div>
+    <div class="employers">
+        <div class="box-student-button">
+            <div class="button-box">
+                <a href="{{ url_for('jobs') }}" class="link-job">
+                    <button class="button-filter">Publicar empleos</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+
 </div>
 {% endblock %}

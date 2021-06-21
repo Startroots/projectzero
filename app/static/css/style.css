@@ -186,6 +186,42 @@ body{
     padding: 12px;
 }
 
+.actions{
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    margin: inherit;
+}
+
+.students{
+    width: 45%;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 1px 4px 3px 0 rgba(0,0,0,.24);
+    margin-right: 4%;
+    background-color: lightgoldenrodyellow;
+}
+.box-student-button{
+    display: flex;
+    align-content: center;
+    text-align-last: justify;
+    height: 100%;
+}
+
+.employers{
+    width: 45%;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 1px 4px 3px 0 rgba(0,0,0,.24);
+    background-color: lightblue;
+}
+.footer{
+    height: 20vh;
+    border: 1px solid black;
+    border-radius: 12px;
+    margin: inherit;
+}
+
 @media screen and (max-width: 991px) {
     .layout{
         margin-top: 66px;
@@ -240,4 +276,3 @@ body{
         width: 100%;
     }
 }
-  
