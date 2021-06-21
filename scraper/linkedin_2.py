@@ -37,11 +37,7 @@ while i <= int(no_of_jobs/25)+1:
         driver.find_element_by_xpath(path).click()
     except:
         pass
-        #time.sleep(5)
-    #time.sleep(5)
 
-#soup = BeautifulSoup(driver.page_source, 'lxml')
-#jobs_list = soup.find_all("div", {"class": "jobs-search__results-list"})
 
 #encontrar todos los trabajos
 job_lists = driver.find_element_by_class_name('jobs-search__results-list')
@@ -61,8 +57,11 @@ for job in jobs:
     
     test.click()
     time.sleep(3)
-   
-    photo = driver.find_element_by_xpath('/html/body/div[1]/div/section/div[2]/section[1]/div/a/img').get_attribute('src')
+    
+    try:   
+        photo = driver.find_element_by_xpath('/html/body/div[1]/div/section/div[2]/section[1]/div/a/img').get_attribute('src')
+    except:
+        photo = "https://static-exp1.licdn.com/sc/h/9a9u41thxt325ucfh5z8ga4m8"
     desc = driver.find_element_by_xpath('/html/body/div[1]/div/section/div[2]/section[2]/div/section/div').get_attribute('innerText')
     list_funciones = driver.find_element_by_xpath('/html/body/div[1]/div/section/div[2]/section[2]/ul')
     funciones = list_funciones.find_elements_by_tag_name('li')
@@ -81,9 +80,7 @@ for job in jobs:
     dic = {'Title': name, 'Company': company, 'Date': time_, 'Link': link, 'Photo': photo, 'Description': desc, 'Function': func, 'Type': type_, 'Sector': sect, 'portal':'linkedin'}
     data.append(dic)
     cont = cont + 1    
-    
-    #if cont == 3:
-     #   break
+
 
 output = pd.DataFrame()
 output = output.append(data, ignore_index=True, sort=False)

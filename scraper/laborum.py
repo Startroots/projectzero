@@ -15,12 +15,8 @@ driver.maximize_window()
 no_of_jobs = int(driver.find_element_by_css_selector('h1>span').get_attribute('innerText'))
 print("Numero de anuncios: ", no_of_jobs)
 
-for i in range(2,20):
-    try:
-        driver.find_element_by_xpath(f'//*[@id="listado-avisos"]/div[{i}]/a/div[1]/h3[1]').click()
-        time.sleep(3)
-        empresa = driver.find_element_by_xpath(f'//*[@id="listado-avisos"]/div[{i}]/a/div[1]/h3[1]').get_attribute('innerText')
-        titulo = driver.find_element_by_xpath(f'//*[@id="listado-avisos"]/div[{i}]/a/div[2]/h2').get_attribute('innerText')
-        print(titulo, empresa)
-    except:
-        print("error")
+#encontrar todos los trabajos
+job_lists = driver.find_element_by_id('listado-avisos')
+jobs = job_lists.find_elements_by_tag_name('li') # return a list
+
+
