@@ -9,17 +9,17 @@ from wtforms import widgets, SelectMultipleField
 
 from datetime import datetime
 import pandas as pd
-
+import numpy as np
 import requests
 import json
+import random
+
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_login import LoginManager
 
-
-import os
 
 app = Flask(__name__)
 
@@ -111,9 +111,20 @@ def jobs():
 	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
 
 
-@app.route('/')
+@app.route('/',methods=['post','get'])
 def index():
-	return render_template('index.html')
+	filenames = os.listdir("static/img/occupation/png") #read names fies
+	filenames = np.array(filenames) #transform to numpy array
+	filenames = np.random.permutation(filenames) #positions permutations
+	
+	files = []
+	for i in range(len(filenames)):
+		files.append('img/occupation/png/'+filenames[i])
+
+	files = files[:5] #return de first fives
+
+
+	return render_template('index.html', files=files)
 	
 
 if __name__ == "__main__":

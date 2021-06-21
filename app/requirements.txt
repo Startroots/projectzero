@@ -6,6 +6,7 @@ flask-bootstrap ==3.3.7.1
 pandas
 xlrd
 openpyxl
+numpy
 
 # Flask Packages
 Flask-Bootstrap==3.3.7.1
@@ -19,6 +20,7 @@ werkzeug==0.16.1
 wtforms-html5
 wtforms-validators
 email-validator
+
 
 # Automated tests
 pytest==3.0.5

@@ -9,7 +9,7 @@
         <meta name="keywords" content="Practicas, pasantias, Trabajo, jovenes, estudiantes, universitarios, Chile, Santiago">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/miniature-logo.png') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-		<title>Projectzero-{% block title %}{% endblock %}</title>
+		<title>Projectzero | {% block title %}{% endblock %}</title>
 		{% endblock %}
 	</head>
 	<body>
@@ -22,7 +22,10 @@
 				</div>
 			</header>
 		{% endblock %}
-		{% block content %}{% endblock %}
+		<div class="layout">
+			{% block content %}{% endblock %}			
+		</div>
+
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 	</body>
 </html>

@@ -38,7 +38,6 @@ body{
     float: left;
     width: 20%;
     position: absolute;
-    background-color: #f2f6f7;;
     padding-bottom: 12px;
 
 }
@@ -158,6 +157,34 @@ body{
     color: #737e83;
 }
 
+.welcome{
+    height: auto;
+    width: 100%;
+}
+
+.welcome-title{
+    text-align: center;
+    padding-top: auto;
+}
+.welcome-paragraph{
+    font-size: x-large;
+    text-align: center;
+}
+
+.box-professions{
+    display: flex;
+    align-content: center;
+    text-align-last: justify;
+}
+
+.professions{
+    height: 100%;
+}
+
+.profession{
+    width: 16%;
+    padding: 12px;
+}
 
 @media screen and (max-width: 991px) {
     .layout{
