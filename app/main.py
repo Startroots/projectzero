@@ -132,6 +132,7 @@ def index():
 	export GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
 
 	para ver si esta actica usamos el siguiente comando:
+	
 	echo $GOOGLE_APPLICATION_CREDENTIALS
 	"""
 	"""
