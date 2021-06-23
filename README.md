@@ -14,6 +14,7 @@
 8. Add Google Analytics (Gusy)
 9. Delete Excel after implementing BQ
 10. Error page
+11. add finder
 
 
 ### Other ideas
