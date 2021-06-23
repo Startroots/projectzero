@@ -123,8 +123,19 @@ def index():
 
 	files = files[:5] #return de first fives
 
+	
+	"""
 	#conection BQ
-	"""client = bigquery.Client()
+	para que funcione la conexion es importante crear la variable de entorno en nuestra VM o comupatador
+	para hacer esto activamos nuestro entorno virtual e introducimos el siguiente comando en el terminal:
+
+	export GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
+
+	para ver si esta actica usamos el siguiente comando:
+	echo $GOOGLE_APPLICATION_CREDENTIALS
+	"""
+	"""
+	client = bigquery.Client()
 	query_job = client.query(
     '''
     SELECT
