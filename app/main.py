@@ -129,13 +129,13 @@ def index():
 	para que funcione la conexion es importante crear la variable de entorno en nuestra VM o comupatador
 	para hacer esto activamos nuestro entorno virtual e introducimos el siguiente comando en el terminal:
 
-	export GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
+	SET GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
 
 	para ver si esta actica usamos el siguiente comando:
 	
 	echo $GOOGLE_APPLICATION_CREDENTIALS
 	"""
-	"""
+	
 	client = bigquery.Client()
 	query_job = client.query(
     '''
@@ -153,7 +153,7 @@ def index():
 	results = query_job.result()  # Waits for job to complete.
 
 	for row in results:
-		print("{} : {} views".format(row.url, row.view_count))"""
+		print("{} : {} views".format(row.url, row.view_count))
 
 	return render_template('index.html', files=files)
 	
