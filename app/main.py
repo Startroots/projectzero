@@ -123,40 +123,23 @@ def index():
 
 	files = files[:5] #return de first fives
 
-	
-	"""
-	#conection BQ
-	para que funcione la conexion es importante crear la variable de entorno en nuestra VM o comupatador
-	para hacer esto activamos nuestro entorno virtual e introducimos el siguiente comando en el terminal:
-
-	export GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
-
-	para ver si esta actica usamos el siguiente comando:
-	
-	echo $GOOGLE_APPLICATION_CREDENTIALS
-	"""
-	"""
-	client = bigquery.Client()
-	query_job = client.query(
-    '''
-    SELECT
-      CONCAT(
-        'https://stackoverflow.com/questions/',
-        CAST(id as STRING)) as url,
-      view_count
-    FROM `bigquery-public-data.stackoverflow.posts_questions`
-    WHERE tags like '%google-bigquery%'
-    ORDER BY view_count DESC
-    LIMIT 10'''
-	)
-
-	results = query_job.result()  # Waits for job to complete.
-
-	for row in results:
-		print("{} : {} views".format(row.url, row.view_count))"""
-
 	return render_template('index.html', files=files)
-	
+
+"""
+#conection BQ
+para que funcione la conexion es importante crear la variable de entorno en nuestra VM o comupatador
+para hacer esto activamos nuestro entorno virtual e introducimos el siguiente comando en el terminal:
+
+export GOOGLE_APPLICATION_CREDENTIALS="credentials/projectzero-317519-da2f04aa9c6a.json"
+
+para ver si esta actica usamos el siguiente comando:
+
+echo $GOOGLE_APPLICATION_CREDENTIALS
+"""	
+@app.route('/update-db',methods=['post','get'])
+def update_db():
+
+	return render_template('update-db.html')
 
 if __name__ == "__main__":
     # This is used when running locally. Gunicorn is used to run the
