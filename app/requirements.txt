@@ -8,6 +8,7 @@ xlrd
 openpyxl
 numpy
 google-cloud-bigquery>=2.7.0
+pyarrow
 
 
 # Flask Packages
