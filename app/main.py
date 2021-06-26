@@ -32,42 +32,32 @@ SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
 def data():
-	data = pd.read_excel('LinkedIn_intern_jobs_2_chile.xlsx')
-	data["Function"]= data["Function"].str.split(", ")
-	functions = list(data['Function'])
+
 	final = []
-	for x in functions:
-		if type(x) == list:
-			for i in x:
-				i.replace(" ", "")
-				final.append(i)
-	all_functions = list(set(final)) 
+
+	client = bigquery.Client()
+	query_s = "SELECT Function FROM `projectzero-317519.data.table1`"
+	print(query_s)
+	# Perform a query.
+	QUERY = (query_s)
+	query_job = client.query(QUERY)  # API request
+	rows = query_job.result()  # Waits for query to finish
+
+	for row in rows:
+		lista_mala = (str(row.Function)).split(",")
+		for i in lista_mala:
+			palabra =""
+
+			for j in range(len(i)):
+				if i[j]!="'" and i[j]!="[" and i[j]!="]" :
+					palabra += i[j]
+
+			final.append(palabra)
+
+	all_functions = list(set(final)) #fix bigquery or this kk
+
 	return all_functions
 
-def filter(company, title, description,link,link_picture,functions, selection):
-	c = []
-	t = []
-	d = []
-	l = []
-	lp = []
-	f = []
-	for i in range(len(company)):
-		if type(functions[i]) == list:
-			if any(x in selection for x in functions[i]):
-				c.append(company[i])
-				t.append(title[i])
-				d.append(description[i])
-				l.append(link[i])
-				lp.append(link_picture[i])
-				f.append(functions[i])
-			elif len(selection)==0:
-				c.extend(company)
-				t.extend(title)
-				d.extend(description)
-				l.extend(link)
-				lp.extend(link_picture)
-				f.extend(functions)
-	return c,t,d,l,lp,f
 
 class MultiCheckboxField(SelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
@@ -83,36 +73,51 @@ class SimpleForm(FlaskForm):
 
 @app.route('/jobs', methods=['post','get'])
 def jobs():
-	form = SimpleForm()
+	client = bigquery.Client()
 
-	data = pd.read_excel('LinkedIn_intern_jobs_2_chile.xlsx')
-	company = list(data['Company'])
-	title = list(data['Title'])
-	description = list(data['Description'])
-	link = list(data['Link'])
-	link_picture = list(data['Link_picture'])
-	data["Function"]= data["Function"].str.split(", ")
-	functions = list(data['Function'])
-	final = []
-	for x in functions:
-		if type(x) == list:
-			for i in x:
-				i.replace(" ", "")
-				final.append(i)
-	all_functions = list(set(final))   
+	form = SimpleForm()
+	cadena = ""
+
+	if form.validate_on_submit():
+		categorias = form.example.data
+	else:
+		categorias = []
+
+	for i in range(len(categorias)):
+		if i ==0:
+			cadena = "WHERE Function LIKE" + "'%"+categorias[i]+"%'"
+		else:
+			cadena += " or Function LIKE" + "'%"+categorias[i]+"%'"
+	
+	query_s = "SELECT * FROM `projectzero-317519.data.table1` " + cadena
+	# Perform a query.
+	QUERY = (query_s)
+
+	query_job = client.query(QUERY)  # API request
+	rows = query_job.result()  # Waits for query to finish
+
+	company = []
+	title = []
+	description = []
+	link = []
+	link_picture = []
+	functions = []
+
+	for row in rows:
+		company.append(str(row.Company))
+		title.append(str(row.Title))
+		description.append(str(row.Description))
+		link.append(str(row.Link))
+		link_picture.append(str(row.Photo))
+		functions.append(str(row.Function))
 
 	#formulario
 	if form.validate_on_submit():
-		selections = form.example.data
-		print(form.example.data)
-		company, title, description,link,link_picture,functions = filter(company, title, description,link,link_picture,functions, selections)
 		return render_template('jobs.html', company=company, title=title, description=description, 
-	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
-	else:
-		print("error")
+	functions=functions, link=link, link_picture=link_picture, form=form)
 
 	return render_template('jobs.html', company=company, title=title, description=description, 
-	functions=functions, link=link, link_picture=link_picture, all_functions=all_functions, form=form)
+	functions=functions, link=link, link_picture=link_picture, form=form)
 
 
 @app.route('/',methods=['post','get'])
