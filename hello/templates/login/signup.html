@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Registro {% endblock %}
+
+{% block content %}
+
+<div class="base">
+    <div class="Cryptual-auth-box">
+        <div class="Cryptual-ath-brand">
+            <img style="float: left;" class="image-logo" src="{% static 'img/logo.png'%}"height="32px">
+            <br>
+        </div>
+        <div class="login-page">
+            <h1 style="font-weight: lighter;">Empecemos 🤝</h1>
+            <div class="Cryptual-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="Cryptual-form-fields">
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    {{form.username}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    {{form.email}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    {{form.password1}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    {{form.password2}}
+                                </div>
+                            </div>
+                        </div>
+                    {{form.errors}}
+                    </div>
+                    <div class="Cryptual-auth-links">
+                        <p class="text-links">
+                            Al crear tu cuenta estás aceptando la<br> <a href="">Política de Privacidad </a> y <a href="">Términos y Condiciones </a>
+                        </p>
+                    </div>
+                    <div class="Cryptual-form-actions">
+                        <button type="submit" class="button-large">Continuar</button>
+                    </div>
+                    <div class="Cryptual-auth-links">
+                        <p class="text-links">
+                            ¿Ya tienes una cuenta? <br> <a href="{% url 'login' %}">Entra aquí</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Ingresar {% endblock %}
+
+{% block content %}
+<div class="base">
+    <div class="Cryptual-auth-box">
+        <div class="Cryptual-ath-brand">
+            <img style="float: left;" class="image-logo" src="{% static 'img/logo.png'%}"height="32px">
+        </div>
+        <div class="login-page">
+            <br>
+            <h1 style="font-weight: lighter;">Hola de nuevo 👋</h1>
+            <div class="Cryptual-form">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="Cryptual-form-fields">
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    <input type="text" name="username" id="user-email" placeholder="Usuario" autocomplete="off" class="form-control base-input-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    <input type="password" name="password" id="password" placeholder="Clave" autocomplete="off" class="form-control base-input-input" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Cryptual-form-actions">
+                        <input  type="submit" value="Entrar" class="button-large">
+                    </div>
+                    <div class="Cryptual-auth-links">
+                        <p class="text-links">
+                            <p>¿No tienes una cuenta?</p>
+                            <a href="{% url 'signup' %}">Entra aquí</a>
+                        </p>
+                    </div>
+                </form>
+                {% for message in messages %}
+                    <p id="messages">{{message}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {% for campo in form_job %}
+        <div class="Cryptual-form-fields">
+            <div class="Cryptual-form-control">
+                <div class="base-input-data">
+                    <div class="base-input-wrapper">
+                        {{ campo }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="Cryptual-form-actions">
+        <input  type="submit" value="Enviar" class="button-large">
+    </div>     
+</form>
+{% endblock %}

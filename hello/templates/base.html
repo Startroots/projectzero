@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Practicas y pasantias para estudiantes de Chile">
+		<meta name="keywords" content="Practicas, pasantias, Trabajo, jovenes, estudiantes, universitarios, Chile, Santiago">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/miniature-logo.png' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style-login.css' %}">
+		<title>Intercambiapp | {% block title %}{% endblock %}</title>
+	</head>
+	<body>
+		{% block header %}
+			<header class="pz-header">
+				<div class="pz-header-container">
+					<div class="pz-header-brand">
+						<a href="{% url 'index'%}"><img src="{% static 'img/logo.png'%}" alt="Projectzero" ></a>
+					</div>
+					{% if request.user.is_authenticated %}
+						<div class="log">
+							Hola, {{request.user}}
+							<a class = "ingresar" href="{% url 'logout' %}">Salir</a>
+						</div>
+					{% else %}
+						<div class="log">
+							<a class = "ingresar" href="{% url 'login' %}">Ingresar</a>
+							<a class = "empezar" href="{% url 'signup' %}">Empezar</a>
+						</div>
+					{% endif %}
+				</div>
+			</header>
+		{% endblock %}
+		<div class="layout">
+			{% block content %}{% endblock %}			
+		</div>
+
+		<script src="{% static 'js/app.js' %}"></script>
+	</body>
+</html>
