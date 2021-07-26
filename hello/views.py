@@ -12,7 +12,6 @@ import os
 # Create your views here.
 
 
-
 def index(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     path = os.path.join(BASE_DIR, 'static/img/occupation/png')
@@ -33,15 +32,11 @@ def index(request):
 
 def jobs(request):
     # return HttpResponse('Hello from Python!')
-    job = Job()
-    job.save()
-
     jobs = Job.objects.all()
     return render(request, "jobs.html", {"jobs": jobs})
 
-url="https://intercambiapp.herokuapp.com/"
 
-@login_required(login_url=url+'login')
+@login_required(login_url='/login/')
 def add(request):
     form_job = CreatejobForm()
     if request.method == 'POST':

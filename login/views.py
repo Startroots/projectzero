@@ -4,13 +4,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 #my scripts
 from .forms import CreateUserForm
+import os
 # Create your views here.
 
-url="https://intercambiapp.herokuapp.com/"
 
 def registerPage(request):
     if request.user.is_authenticated:
-        return redirect(url)
+        return render(request, 'index.html')
     else:
         form= CreateUserForm()
         if request.method == 'POST':
@@ -19,16 +19,16 @@ def registerPage(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Fue creada tu cuenta '+user+' :)' )
-                return redirect(url + "login")
+                return render(request, 'login.html')
             else:
                 print ('no fue posible crear tu cuenta :(')
 
         context={'form':form}
-        return render(request,'login/signup.html',context)
+        return render(request,'signup.html',context)
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect(url)
+        return render(request, 'index.html')
     else:
         if request.method=='POST':
             
@@ -36,19 +36,19 @@ def loginPage(request):
 
             if user is not None:
                 login(request,user)
-                return redirect(url)
+                return render(request, 'index.html')
             else:
                 messages.info(request, 'Nombre de usuario o contraseña esta incorrecta')
             
         context ={} 
-        return render(request,'login/login.html',context)
+        return render(request,'login.html',context)
 
 
 def logoutPage(request):
     logout(request)
-    return redirect(url)
+    return render(request, 'index.html')
 
-@login_required(login_url=url+'login')
+
 def welcomePage(request):
     context={}
-    return render(request,"login/bienvenida.html",context)
+    return render(request,"bienvenida.html",context)
