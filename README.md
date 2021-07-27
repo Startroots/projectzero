@@ -1,25 +1,18 @@
 # projectzero  
-| Creators       | profiles  | 
-|----------------|-----------|
-| Javiera Bustos | [@javduzen](https://github.com/javduzen) |   
-| José Izam      | [@joigmz](https://github.com/joigmz)   |   
+| Creators       | profiles                                 |  Resume                                    | 
+|----------------|------------------------------------------|--------------------------------------------|
+| Javiera Bustos | [@javduzen](https://github.com/javduzen) |                                            |
+| José Izam      | [@joigmz](https://github.com/joigmz)     | [resume](https://jose-izam.herokuapp.com/) |
+
 ## To-do list
-1. Finish index  (Gusy) ✅
-2. Optimize Scrapers (add laborum and other sources, unify)  (Javi)
-3. BigQuery integration  (both) 75%✅
-4. Form for companies to send us their job opportunities  (both)
-5. Work on the filter (add laborum, pz, and other options)  
-6. Gringo's Inspiration
-7. Add links' picture
-8. Add Google Analytics (Gusy)
-9. Delete Excel after implementing BQ (Gusy) 75%✅
-10. Error page
-11. add finder
+1. Work on the filter (add laborum, pz, and other options)  
+1. Add Google Analytics (Gusy)
+3. Error page
+4. add finder
 
 
 ### Other ideas
 * Page with job recommendations
-* Login
 * Favorites list (hearts and shit)
 * Teams hackatons and the winning team won a position on the company
 * Donations button
