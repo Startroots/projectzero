@@ -13,20 +13,7 @@ import os
 
 
 def index(request):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    path = os.path.join(BASE_DIR, 'static/img/occupation/png')
-
-    filenames = os.listdir(path)
-    filenames = np.array(filenames) #transform to numpy array
-    filenames = np.random.permutation(filenames) #positions permutations
-	
-    files = []
-    for i in range(len(filenames)):
-	    files.append('img/occupation/png/'+filenames[i])
-
-    files = files[:5] #return de first fives
-
-    return render(request,'index.html', {"files":files})
+    return render(request,'index.html')
 
 
 

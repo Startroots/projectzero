@@ -10,7 +10,9 @@ class CreatejobForm(forms.ModelForm):
             'title',
             'description',
             'link',
-            'link_picture'
+            'link_picture',
+            'category',
+            'tag'
         ]
         widgets = {
             'company': forms.TextInput(attrs={'class': 'base-input-input','placeholder': 'Nombre compañia', 'autocomplete': 'off', 'autofocus': True}),
@@ -18,4 +20,7 @@ class CreatejobForm(forms.ModelForm):
             'description': forms.TextInput(attrs={'class': 'base-input-input','placeholder': 'Descripcion', 'autocomplete': 'off', 'required': True}),
             'link': forms.TextInput(attrs={'class': 'base-input-input','placeholder': 'Link de la compañia', 'autocomplete': 'off', 'required': True}),
             'link_picture': forms.TextInput(attrs={'class': 'base-input-input','placeholder': 'link foto compañia', 'autocomplete': 'off', 'required': True}),
+            'category': forms.Select(attrs={'class': 'base-input-input','placeholder': 'categoria', 'autocomplete': 'off', 'required': True}),
+            'tag': forms.TextInput(attrs={'class': 'base-input-input', 'placeholder': 'Django Javascript Python', 'autocomplete': 'off', 'required': True}),
+            
         }

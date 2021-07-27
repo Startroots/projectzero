@@ -1,22 +1,37 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% load static %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {% for campo in form_job %}
-        <div class="Cryptual-form-fields">
-            <div class="Cryptual-form-control">
-                <div class="base-input-data">
-                    <div class="base-input-wrapper">
+<div class="Cryptual-auth-box">
+    <form method="POST">
+        {% csrf_token %}
+        {% for campo in form_job %}
+            {% if campo != form_job.tag  %}
+                <div class="Cryptual-form-fields">
+                    <div class="Cryptual-form-control">
+                        <div class="base-input-data">
+                            <div class="base-input-wrapper">
                         {{ campo }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    {% endfor %}
-    <div class="Cryptual-form-actions">
-        <input  type="submit" value="Enviar" class="button-large">
-    </div>     
-</form>
+            {% else %}
+                Ingrese los tags separados por espacios
+                <div class="Cryptual-form-fields">
+                    <div class="Cryptual-form-control">
+                        <div class="base-input-data">
+                            <div class="base-input-wrapper">
+                                {{ campo }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="Cryptual-form-actions">
+            <input  type="submit" value="Publicar" class="button-large">
+        </div>     
+    </form>
+</div>
 {% endblock %}
