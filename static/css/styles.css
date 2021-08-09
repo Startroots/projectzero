@@ -1,0 +1,325 @@
+body{
+    color: #2b353b;
+    font-family:"Lato",sans-serif,sans-serif;
+}
+
+/* base */
+.pz-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    z-index: 900;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
+
+.pz-header-container {
+    display: flex;
+    height: 66px;
+    padding: 0 29px;
+    justify-content: space-between;
+}
+
+.pz-header-brand {
+    position: relative;
+    min-width: 165px;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.log{
+    float: right;
+    align-items: center;
+    display: flex;
+}
+
+a.ingresar {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 16px;
+    text-decoration: none;;
+    color: black;
+}
+
+
+a.ingresar:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #f3f6fa;
+    border-radius: 22px;
+}
+
+a.empezar {
+    float: left;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    color: #f3f6fa;
+    background-color: black;
+    border-radius: 22px;
+}
+
+a.empezar:hover{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    transition: background .3s;
+    border-radius: 22px;
+    box-shadow: 1px 4px 3px 0 rgba(0,0,0,.24);
+}
+
+.layout{
+    margin-top: 66px;
+}
+
+/* add */
+
+.Cryptual-auth-box{
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    border: 1px solid #e1e1e1;
+    padding: 50px 60px;
+    margin: auto;
+}
+
+.Cryptual-form-fields{
+    width: 380px;
+    height: auto;
+}
+.Cryptual-form-control{
+    width: 380px;
+    height: 61px;
+    margin-bottom: 24px;
+}
+
+.base-input-data{
+    width: 100%;
+    position: relative;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.base-input-wrapper{
+    width: 344px;
+    height: 21px;
+    padding: 16px 16px 16px 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+}
+
+.Cryptual-form-actions{
+    width: 380px;
+    height: 50px;
+    padding: auto;
+    margin-top: 24px;
+}
+
+.button-large{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 24px;
+    border-color: black;
+    cursor: pointer;
+}
+
+/* login */
+
+.base{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.Cryptual-ath-brand{
+    margin-bottom: 24px;
+}
+
+/*
+.login-page {
+
+}
+*/
+.base-input-input{
+    flex: 1 1;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: transparent;
+    color: #282828;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    height: auto;
+    border: 0;
+    width: 344px;
+    height: 21px;
+    outline: none;
+}
+
+.Cryptual-auth-links{
+    width: 378px;
+    height: 52px;
+    margin-top: 36px;
+    text-align: center;
+    color: #282828;
+    font-size: 14px;
+}
+
+.Cryptual-auth-links a{
+    text-decoration: none;
+    color: rgb(40, 197, 158);
+}
+
+.Cryptual-auth-links a:hover{
+    text-decoration: underline;
+}
+
+/*
+.text-links{
+
+}
+#messages{
+
+}
+
+*/
+
+/* jobs */
+
+.box-filters{
+    height: 100%;
+    float: left;
+    width: 20%;
+    position: absolute;
+    padding-bottom: 12px;
+
+}
+
+.filters-list ul li{
+    list-style: none;
+    font-size: 14px;
+}
+.filters-list ul{
+    padding-left: 5px;
+}
+
+.filter-title{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: black;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.button-box{
+    margin: auto;
+    display: flex;
+}
+
+.button-filter{
+    height: 36.4px;
+    background-color: #fff;
+    float: left;
+    margin-right: 9px;
+    padding: 0px 16px 0px 16px;
+    color: black;
+    border-radius: 6px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.jobs-box{
+    float: right;
+    width: 79%;
+}
+
+.title-h1{
+    letter-spacing: -0.04em;
+}
+
+.jobs-results:hover{
+    background-color: #f2f6f7;
+}
+
+.link-job{
+    text-decoration: none;
+    color: inherit;
+}
+.jobs-results-information{
+    padding: 23px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(135,153,160,0.25);
+}
+
+.jobs-results-information-main{
+    display: flex;
+    flex-grow: 2;
+}
+
+.avatar{
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.results-list-info{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+
+.results-list-title{
+    margin: 5px 0 0;
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.color-title1{
+    color: #2b353b;
+}
+
+.business{
+    font-size: 14px;
+    color: #737e83;
+}
+/* ---- */
+
+@media screen and (max-width: 991px) {
+    .layout{
+        margin-top: 66px;
+    }
+    .box-filters{
+        height: 100%;
+        float: left;
+        width: 100%;
+        position: relative;
+        background-color: white;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        z-index: -1;
+    }
+
+    .jobs-box{
+        float: left;
+        width: 100%;
+    }
+}

@@ -3,6 +3,7 @@ from taggit.managers import TaggableManager
 
 # Create your models here.
 class Greeting(models.Model):
+    id = models.AutoField(primary_key=True)
     when = models.DateTimeField("date created", auto_now_add=True)
 
 category_choice = (
@@ -21,6 +22,7 @@ category_choice = (
 	)
 
 class Job(models.Model):
+    id = models.AutoField(primary_key=True)
     company = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=500)
