@@ -222,6 +222,398 @@ body{
     margin: inherit;
 }
 
+body {
+    font-family: Poppins,sans-serif;
+    line-height: 1.5;
+}
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    background-color: white;    
+    z-index: +1;
+}
+.navbar2 {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    background-color: white;    
+    z-index: +1;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 4%), 0 1px 1px 0 rgb(0 0 0 / 4%), 0 2px 1px -1px rgb(0 0 0 / 4%);
+}
+.landing-navbar{
+    margin: 0px 10% 0px 10%;
+    padding: 16px 0px 16px 0px;
+    height: 44px;
+    font-size: 14px;
+}
+.logo {
+    float: left;
+}
+
+.logo:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #f3f6fa;
+    border-radius: 22px;
+}
+
+.logo .image-logo{
+    margin-top: 5px;
+}
+
+.logo .name-logo {
+    float: right;
+    text-decoration: none;
+    color: #333232;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    padding: 6px 10px 6px 2px;
+
+}
+.links a{
+    margin-top: 3px;
+    padding: 10px 16px 10px 16px;
+    text-decoration: none;
+    color: #757575;
+    float: left;
+}
+
+.links a:hover{
+    text-decoration: none;
+    background-color: #f3f6fa;
+    color: black;
+    border-radius: 22px;
+}
+
+.links2 a{
+    margin-top: 3px;
+    padding: 10px 16px 10px 16px;
+    text-decoration: none;
+    color: #757575;
+    float: right;
+}
+
+.links2 a:hover{
+    text-decoration: none;
+    background-color: #f3f6fa;
+    color: black;
+    border-radius: 22px;
+}
+
+.log{
+    float: right;
+    align-items: center;
+    display: flex;
+}
+
+a.ingresar {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-top: 3px;
+    margin-right: 16px;
+    text-decoration: none;;
+    color: black;
+}
+
+
+a.ingresar:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #f3f6fa;
+    border-radius: 22px;
+}
+
+a.empezar {
+    float: left;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    color: #f3f6fa;
+    background-color: black;
+    height: 24px;
+    border-radius: 22px;
+}
+
+a.empezar:hover{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    transition: background .3s;
+    border-radius: 22px;
+    box-shadow: 1px 4px 3px 0 rgba(0,0,0,.24);
+}
+
+#tablet-header {
+    transform: rotate(-10deg);
+    z-index: -1;
+}
+
+.mid-page{
+    width: 50%;
+    float: left;
+}
+.mid-page .title {
+    font-size: 43px;
+    padding-top: 50px;
+    color: #282828;
+    font-weight:lighter;
+}
+.mid-page .text {
+    font-size: 18px;
+    color: #757575;
+    font-weight:lighter;
+}
+
+#image-table{
+    float: right;
+}
+
+.quarter-page{
+    width: 25%;
+    float: left;
+}
+
+.footer{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 14px;
+    background-color: #f3f6fa;
+    height: 270px;
+}
+
+.footer ul{
+    list-style-type: none;
+}
+
+.text-blue{
+    color: black;;
+}
+
+.text-gray{
+    color: #757575;
+}
+
+.footer ul li {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.base{
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: 100px 100px 100px 100px;
+}
+
+.Cryptual-auth-box{
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    border: 1px solid #e1e1e1;
+    padding: 50px 60px;
+    margin: auto;
+}
+
+.Cryptual-ath-brand{
+    margin-bottom: 24px;
+}
+
+.Cryptual-ath-brand p{
+    font-weight: lighter;
+}
+
+.Cryptual-form-fields{
+    width: 380px;
+    height: auto;
+}
+.Cryptual-form-control{
+    width: 380px;
+    height: 61px;
+    margin-bottom: 24px;
+}
+
+.base-input-data{
+    width: 100%;
+    position: relative;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.base-input-wrapper{
+    width: 344px;
+    height: 21px;
+    padding: 16px 16px 16px 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+}
+
+.base-input-input{
+    flex: 1 1;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: transparent;
+    color: #282828;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    height: auto;
+    border: 0;
+    width: 344px;
+    height: 21px;
+    outline: none;
+    }
+
+.Cryptual-form-actions{
+    width: 380px;
+    height: 50px;
+    padding: auto;
+    margin-top: 24px;
+}
+
+.button-large{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border-radius: 24px;
+    border-color: black;
+    cursor: pointer;
+}
+
+
+.Cryptual-auth-links{
+    width: 378px;
+    height: 52px;
+    margin-top: 36px;
+    text-align: center;
+    color: #282828;
+    font-size: 14px;
+}
+
+.Cryptual-auth-links a{
+    text-decoration: none;
+    color: rgb(40, 197, 158);
+}
+
+.Cryptual-auth-links a:hover{
+    text-decoration: underline;
+}
+
+.greeting{
+    height: 100px;
+    width: auto;
+}
+
+.greeting-title{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.greeting-sub{
+    font-size: 18px;
+    color: #757575;
+    margin-top: 0px;
+}
+
+.sumary-label{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #282828;
+}
+
+.data-inversion{
+    float: left;
+    margin-right: 20px;
+}
+
+.sumary-label2{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #757575;
+}
+
+.sumary-label3{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #005ad6;
+}
+
+.actual-cash{
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+.deposit-cash{
+    color: #757575;
+    font-size: 21px;
+    margin-top: 0px;
+}
+
+.deposit-cash2{
+    color: #005ad6;
+    font-size: 21px;
+    margin-top: 0px;
+}
+
+.objetives{
+    height: auto;
+}
+
+.money{
+    height: 200px;
+}
+.goals{
+    height: 100px;
+}
+
+.goal-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    width: 40%;
+    float: left;
+    margin-right: 3%;
+}
+
+.goal-item:hover{
+    text-decoration: none;
+    background-color: white;
+    transition: box-shadow .2s ease;
+    border-radius: 22px;
+    box-shadow: 1px 4px 3px 0 rgba(0,0,0,.24);
+}
+.emoticon-goal{
+    font-size: 24px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 10%;
+}
+
+.name-goal{
+    margin: 0px 0px 0px 0px;
+    padding-right: 10%;
+}
+
+.box-money-goal{
+    padding-left: 15%;
+}
+.money-goal{
+    margin: 0px 0px 0px 0px;
+}
+
+
 @media screen and (max-width: 991px) {
     .layout{
         margin-top: 66px;

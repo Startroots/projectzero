@@ -8,68 +8,33 @@
 		<meta name="description" content="Practicas y pasantias para estudiantes de Chile">
 		<meta name="keywords" content="Practicas, pasantias, Trabajo, jovenes, estudiantes, universitarios, Chile, Santiago">
 		<link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/miniature-logo.png' %}">
-		<!--=============== REMIXICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css'%}">
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 		<title>Projectzero | {% block title %}{% endblock %}</title>
 	</head>
 	<body>
-	<header class="header" id="header">
-		<nav class="nav container">
-			<a href="#" class="nav__logo">Projectzero</a>
-
-			<div class="nav__menu" id="nav-menu">
-				<ul class="nav__list">
-					<li class="nav__item">
-						<a href="#home" class="nav__link active-link">Home</a>
-					</li>
-
-					{% if request.user.is_authenticated %}
-						<li class="nav__item">
-							<a class = "nav__link" href="{% url 'add' %}">Publicar Trabajo</a>
-						</li>
-						Hola, {{request.user}}
-						<li class="nav__item">
-							<a class = "nav__link" href="{% url 'logout' %}">Salir</a>
-						</li>
-					{% else %}
-						<li class="nav__item">
-							<a class = "nav__link" href="{% url 'login' %}">Ingresar</a>
-						</li>
-						<li class="nav__item">
-							<a class = "nav__link" href="{% url 'signup' %}">Empezar</a>
-						</li>
-					{% endif %}
-
-				</ul>
-
-				<div class="nav__dark">
-					<!-- Theme change button -->
-					<span class="change-theme-name">Dark mode</span>
-					<i class="ri-moon-line change-theme" id="theme-button"></i>
+		<header class="pz-header">
+			<div class="pz-header-container">
+				<div class="pz-header-brand">
+					<a href="{% url 'index'%}"><img src="{% static 'img/logo.png'%}" alt="Projectzero" ></a>
 				</div>
-
-				<i class="ri-close-line nav__close" id="nav-close"></i>
+				{% if request.user.is_authenticated %}
+				<div class="log">
+					Hola, {{request.user}}
+					<a class = "ingresar" href="{% url 'logout' %}">Salir</a>
+				</div>
+				{% else %}
+				<div class="log">
+					<a class = "ingresar" href="{% url 'login' %}">Ingresar</a>
+					<a class = "empezar" href="{% url 'signup' %}">Empezar</a>
+				</div>
+				{% endif %}
 			</div>
+			</header>
 
-			<div class="nav__toggle" id="nav-toggle">
-				<i class="ri-function-line"></i>
+			<div class="layout">
+				{% block content %}{% endblock %}			
 			</div>
-		</nav>
-	</header>
 	
-	{% block content %} 
-	{% endblock %}
-
-	<script src="{% static 'js/app.js' %}"></script>
-	<!--=============== SCROLL REVEAL===============-->
-	<script src="{% static 'js/scrollreveal.min.js' %}"></script>
-	<!--=============== SWIPER JS ===============-->
-	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-	<!--=============== MAIN JS ===============-->
-	<script src="{% static 'js/main.js' %}"></script>
+			<script src="{% static 'js/app.js' %}"></script>
 	</body>
 </html>
