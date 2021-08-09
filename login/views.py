@@ -47,8 +47,3 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return render(request, 'index.html')
-
-
-def welcomePage(request):
-    context={}
-    return render(request,"bienvenida.html",context)
