@@ -19,10 +19,8 @@ urlpatterns = [
     path("", hello.views.index, name="index"),
     path("jobs/", hello.views.jobs, name="jobs"),
     path("add/", hello.views.add, name="add"),
-    path("db/", hello.views.db, name="db"),
     path("signup/", login.views.registerPage, name="signup"),
     path("login/", login.views.loginPage, name="login"),
     path('logout/', login.views.logoutPage, name="logout"),
-    path("bienvenida/", login.views.welcomePage, name="welcome"),
     path("admin/", admin.site.urls),
 ]
