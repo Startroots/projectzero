@@ -15,13 +15,10 @@ import os
 def index(request):
     return render(request,'index.html')
 
-
-
 def jobs(request):
     # return HttpResponse('Hello from Python!')
     jobs = Job.objects.all()
     return render(request, "jobs.html", {"jobs": jobs})
-
 
 @login_required(login_url='/login/')
 def add(request):
@@ -33,11 +30,3 @@ def add(request):
 
     return render(request, "add.html", {"form_job": form_job})
 
-def db(request):
-
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "db.html", {"greetings": greetings})
