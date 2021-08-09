@@ -3,36 +3,39 @@
 {% block title %}Agregar trabajo {% endblock %}
 
 {% block content %}
-<div class="Cryptual-auth-box">
-    <form method="POST">
-        {% csrf_token %}
-        {% for campo in form_job %}
-            {% if campo != form_job.tag  %}
-                <div class="Cryptual-form-fields">
-                    <div class="Cryptual-form-control">
-                        <div class="base-input-data">
-                            <div class="base-input-wrapper">
-                        {{ campo }}
+<div class="base">
+    <div class="Cryptual-auth-box">
+        <form method="POST">
+            {% csrf_token %}
+            {% for campo in form_job %}
+                {% if campo != form_job.tag  %}
+                    <div class="Cryptual-form-fields">
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                            {{ campo }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% else %}
-                Ingrese los tags separados por espacios
-                <div class="Cryptual-form-fields">
-                    <div class="Cryptual-form-control">
-                        <div class="base-input-data">
-                            <div class="base-input-wrapper">
-                                {{ campo }}
+                {% else %}
+                    Ingrese los tags separados por espacios
+                    <div class="Cryptual-form-fields">
+                        <div class="Cryptual-form-control">
+                            <div class="base-input-data">
+                                <div class="base-input-wrapper">
+                                    {{ campo }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-        <div class="Cryptual-form-actions">
-            <input  type="submit" value="Publicar" class="button-large">
-        </div>     
-    </form>
+                {% endif %}
+            {% endfor %}
+            <div class="Cryptual-form-actions">
+                <input  type="submit" value="Publicar" class="button-large">
+            </div>     
+        </form>
+    </div>
 </div>
+
 {% endblock %}
